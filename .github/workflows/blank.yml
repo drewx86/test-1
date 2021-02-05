@@ -1,0 +1,16 @@
+name: testy one
+
+on:
+  workflow_dispatch:
+    inputs:
+      isMaintenanceMode:
+        description: 'Is maintenance mode (y/n)'
+        required: true
+        default: 'no'
+jobs:
+  printInputs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Log level: ${{ github.event.inputs.logLevel }}"
+          echo "Tags: ${{ INPUT_ISMAINTENANCEMODE }}"

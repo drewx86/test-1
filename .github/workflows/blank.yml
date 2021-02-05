@@ -6,10 +6,28 @@ on:
       isMaintenanceMode:
         description: 'Is maintenance mode (y/n)'
         required: true
-        default: 'no'
+        default: 'n'
 jobs:
-  printInputs:
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: testyy1
+        if: github.event.inputs.isMaintenanceMode=='y'
+        id: testyyy1
+        env:
+          BUILD_TYPE: PROD11
+        run: |
           echo "Log level: ${{ github.event.inputs.isMaintenanceMode }}"
+          echo "Log level: ${{ $BUILD_TYPE }}"
+          echo "muahahhahahahahhahah"
+
+      - name: testyy2
+        if: github.event.inputs.isMaintenanceMode=='n'
+        id: testyyy2
+        env:
+          BUILD_TYPE: PROD22
+        run: |
+          echo "Log level: ${{ github.event.inputs.isMaintenanceMode }}"
+          echo "Log level: ${{ $BUILD_TYPE }}"
+          echo "nononnonononononnonoonono"

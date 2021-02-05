@@ -13,4 +13,3 @@ jobs:
     steps:
       - run: |
           echo "Log level: ${{ github.event.inputs.logLevel }}"
-          echo "Tags: ${{ INPUT_ISMAINTENANCEMODE }}"

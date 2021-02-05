@@ -19,7 +19,6 @@ jobs:
           BUILD_TYPE: PROD11
         run: |
           echo "Log level: ${{ github.event.inputs.isMaintenanceMode }}"
-          echo "Log level: ${{ $BUILD_TYPE }}"
           echo "muahahhahahahahhahah"
 
       - name: testyy2
@@ -29,5 +28,4 @@ jobs:
           BUILD_TYPE: PROD22
         run: |
           echo "Log level: ${{ github.event.inputs.isMaintenanceMode }}"
-          echo "Log level: ${{ $BUILD_TYPE }}"
           echo "nononnonononononnonoonono"
